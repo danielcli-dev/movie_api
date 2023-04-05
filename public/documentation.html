@@ -6,6 +6,101 @@
   </head>
   <body>
     <h1>Documentation Page</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur</p>
+    <p>Table of endpoints with their request methods </p>
+    <table>
+      <tr>
+        <th>Request</th>
+        <th>URL</th>
+        <th>HTTP Method</th>
+        <th>Query Parameters</th>
+        <th>Request Data Format</th>
+        <th>Response Data Body Format</th>
+      </tr>
+      <tr>
+        <td>Return a list of ALL movies</td>
+        <td>/movies</td>
+        <td>GET</td>
+        <td>None</td>
+        <td>None</td>
+        <td>A JSON object holding data about all the movies</td>
+      </tr>
+      <tr>
+        <td>Return data of a single movie by title</td>
+        <td>/movies/:title</td>
+        <td>GET</td>
+        <td>:title</td>
+        <td>None</td>
+        <td>A JSON object holding data about a single movie</td>
+      </tr>
+      <tr>
+        <td>Return data of genre by title</td>
+        <td>/movies/:title/genre</td>
+        <td>GET</td>
+        <td>:title</td>
+        <td>None</td>
+        <td>A JSON object holding data of genre about a single movie</td>
+      </tr>
+      <tr>
+        <td>Allow new users to register</td>
+        <td>/users</td>
+        <td>POST</td>
+        <td>none</td>
+        <td>
+          JSON object holding data about the user structured like: {"name":
+          "Peter Parker"}
+        </td>
+        <td>A JSON object holding data of the new user including id</td>
+      </tr>
+      <tr>
+        <td>Allow users to update their user info</td>
+        <td>/users/:name</td>
+        <td>PUT</td>
+        <td>:name</td>
+        <td>
+          JSON object holding data about the requested new username structured
+          like: {"newName": "Peter Parker"}
+        </td>
+        <td>A message showing the old and new username</td>
+      </tr>
+      <tr>
+        <td>Allow users to add a movie to their list of favorites</td>
+        <td>/users/:name/add</td>
+        <td>POST</td>
+        <td>:name</td>
+        <td>
+          JSON object holding data about the movie to be added structured like:
+          {"movie": "Spider-man"}
+        </td>
+        <td>A message showing the added movie</td>
+      </tr>
+      <tr>
+        <td>Allow users to remove a movie from their list of favorites</td>
+        <td>/users/:name/remove</td>
+        <td>DELETE</td>
+        <td>:name</td>
+        <td>
+          JSON object holding data about the movie to be added structured like:
+          {"movie": "Spider-man"}
+        </td>
+        <td>A message showing the removed movie</td>
+      </tr>
+      <tr>
+        <td>Allow existing users to deregister</td>
+        <td>/users/:name/deregister</td>
+        <td>DELETE</td>
+        <td>:name</td>
+        <td>None</td>
+        <td>A message showing the name that has been deleted</td>
+      </tr>
+    </table>
+    <style>
+      table,
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
   </body>
 </html>
