@@ -23,6 +23,3 @@ let User = mongoose.model("User", userSchema);
 
 module.exports.Movie = Movie;
 module.exports.User = User;
-
-module.exports.Movie = Movie;
-module.exports.User = User;
