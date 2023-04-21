@@ -24,7 +24,7 @@ mongoose.connect(process.env.CONNECTION_URI, {
 app.use(methodOverride());
 app.use(express.static("public"));
 
-const cors = rquire("cors");
+const cors = require("cors");
 app.use(cors());
 
 let auth = require("./auth")(app);
