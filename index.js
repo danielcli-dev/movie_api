@@ -209,7 +209,7 @@ app.put(
     let hashedPassword = Users.hashPassword(req.body.Password);
 
     Users.findOneAndUpdate(
-      { Username: req.params.Username },
+      { Username: req.body.Username },
       {
         $set: {
           Username: req.body.Username,
@@ -222,7 +222,7 @@ app.put(
     )
       .then((user) => {
         if (!user) {
-          res.status(400).send(req.params.Username + " was not found");
+          res.status(400).send(req.body.Username + " was not found");
         } else {
           res.status(200).json(user);
         }
