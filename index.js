@@ -191,7 +191,7 @@ app.post(
 );
 // Change username
 app.put(
-  "/users/:Username",
+  "/users",
   [
     check("Username", "Username is required").isLength({ min: 5 }),
     check(
