@@ -191,7 +191,7 @@ app.post(
 );
 // Change username
 app.put(
-  "/users",
+  "/users/:Username",
   [
     check("Username", "Username is required").isLength({ min: 5 }),
     check(
@@ -209,7 +209,7 @@ app.put(
     let hashedPassword = Users.hashPassword(req.body.Password);
 
     Users.findOneAndUpdate(
-      { Username: req.body.Username },
+      { Username: req.params.Username },
       {
         $set: {
           Username: req.body.Username,
